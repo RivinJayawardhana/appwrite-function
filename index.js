@@ -13,21 +13,21 @@ function json(res, statusCode, body) {
 
 function getConfig() {
   const {
-    APPWRITE_FUNCTION_API_ENDPOINT,
-    APPWRITE_FUNCTION_PROJECT_ID,
-    APPWRITE_FUNCTION_API_KEY,
+    APPWRITE_ENDPOINT,
+    APPWRITE_PROJECT_ID,
+    APPWRITE_API_KEY,
     APPWRITE_DATABASE_ID,
     APPWRITE_COLLECTION_EVENTS,
     APPWRITE_COLLECTION_REFERRALS
   } = process.env;
 
   if (
-    !APPWRITE_FUNCTION_API_ENDPOINT ||
-    !APPWRITE_FUNCTION_PROJECT_ID ||
-    !APPWRITE_FUNCTION_API_KEY
+    !APPWRITE_ENDPOINT ||
+    !APPWRITE_PROJECT_ID ||
+    !APPWRITE_API_KEY
   ) {
     throw new Error(
-      "Missing built-in function env vars. Expected APPWRITE_FUNCTION_API_ENDPOINT / PROJECT_ID / API_KEY"
+      "Missing Appwrite connection env vars. Expected APPWRITE_ENDPOINT / APPWRITE_PROJECT_ID / APPWRITE_API_KEY"
     );
   }
 
@@ -38,9 +38,9 @@ function getConfig() {
   }
 
   return {
-    endpoint: APPWRITE_FUNCTION_API_ENDPOINT,
-    projectId: APPWRITE_FUNCTION_PROJECT_ID,
-    apiKey: APPWRITE_FUNCTION_API_KEY,
+    endpoint: APPWRITE_ENDPOINT,
+    projectId: APPWRITE_PROJECT_ID,
+    apiKey: APPWRITE_API_KEY,
     databaseId: APPWRITE_DATABASE_ID,
     eventsCollectionId: APPWRITE_COLLECTION_EVENTS,
     referralsCollectionId: APPWRITE_COLLECTION_REFERRALS
