@@ -1,0 +1,14 @@
+{
+  "name": "testapp-backend-function",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "node-appwrite": "^12.0.0"
+  }
+}
+
